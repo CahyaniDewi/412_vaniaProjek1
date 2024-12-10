@@ -10,11 +10,11 @@ class ApiRoute implements Route {
   @override
   void register() {
     // Customer Routes
+    // Customer Routes
     Router.post('/create-customer', customerController.create);
     Router.get('/daftar-customer', customerController.show);
     Router.put('/update-customer/:id', customerController.update);
     Router.delete('/delete-customer/:id', customerController.delete);
-
     // Order Routes
     Router.post('/create-order', orderController.create);
     Router.get('/daftar-order', orderController.show);

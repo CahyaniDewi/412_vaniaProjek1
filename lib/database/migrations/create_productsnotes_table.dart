@@ -1,16 +1,18 @@
 import 'package:vania/vania.dart';
 
-class CreateProductNotesTable extends Migration {
+class CreateProductnotesTable extends Migration {
   @override
   Future<void> up() async {
     super.up();
     await createTableNotExists('productnotes', () {
-      char('note_id', length: 5);
-      string('prod_id', length: 10); // Tidak menggunakan references
+      primary('note_id');
+      bigIncrements('note_id');
+      bigInt('prod_id', unsigned: true);
       dateTime('note_date');
       text('note_text');
       timeStamps();
-      primary('note_id');
+
+      foreign('prod_id', 'products', 'prod_id');
     });
   }
 

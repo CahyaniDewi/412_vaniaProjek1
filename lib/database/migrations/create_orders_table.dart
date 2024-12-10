@@ -5,11 +5,12 @@ class CreateOrdersTable extends Migration {
   Future<void> up() async {
     super.up();
     await createTableNotExists('orders', () {
-      integer('order_num');
-      dateTime('order_date');
-      string('cust_id', length: 5); // Tidak menggunakan references
-      timeStamps();
       primary('order_num');
+      bigIncrements('order_num');
+      bigInt('cust_id', unsigned: true);
+      dateTime('order_date');
+      timeStamps();
+      foreign('cust_id', 'customers', 'cust_id');
     });
   }
 

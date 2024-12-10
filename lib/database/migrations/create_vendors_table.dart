@@ -5,15 +5,15 @@ class CreateVendorsTable extends Migration {
   Future<void> up() async {
     super.up();
     await createTableNotExists('vendors', () {
-      char('vend_id', length: 5);
+      primary('vend_id');
+      bigIncrements('vend_id');
       string('vend_name', length: 50);
-      text('vend_address'); 
-      string('vend_kota', length: 50); 
-      string('vend_state', length: 50); 
-      string('vend_zip', length: 10); 
+      text('vend_address');
+      text('vend_kota');
+      string('vend_state', length: 5);
+      string('vend_zip', length: 7);
       string('vend_country', length: 25);
       timeStamps();
-      primary('vend_id');
     });
   }
 

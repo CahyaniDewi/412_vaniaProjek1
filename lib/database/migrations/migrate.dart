@@ -25,15 +25,15 @@ class Migrate {
     await CreateCustomersTable().up();
     await CreateVendorsTable().up();
     await CreateProductsTable().up();
-    await CreateProductNotesTable().up();
+    await CreateProductnotesTable().up();
     await CreateOrdersTable().up();
-    await CreateOrderItemsTable().up();
+    await CreateOrderitemsTable().up();
   }
 
   dropTables() async {
-    await CreateOrderItemsTable().down();
+    await CreateOrderitemsTable().down();
     await CreateOrdersTable().down();
-    await CreateProductNotesTable().down();
+    await CreateProductnotesTable().down();
     await CreateProductsTable().down();
     await CreateVendorsTable().down();
     await CreateCustomersTable().down();
