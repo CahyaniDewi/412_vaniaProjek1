@@ -38,7 +38,7 @@ class ApiRoute implements Route {
     Router.get('/daftar-product_', productNoteController.show);
     Router.put('/update-product_/:id', productNoteController.update);
     Router.delete('/delete-product_/:id', productNoteController.delete);
-
+ 
     // OrderItem Routes
     Router.post('/create-order-item', orderItemController.create);
     Router.get('/daftar-order-item', orderItemController.show);
